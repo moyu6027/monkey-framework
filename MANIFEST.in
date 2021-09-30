@@ -1,0 +1,2 @@
+include monkey/libs/
+include requirements.txt

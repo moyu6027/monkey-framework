@@ -1,0 +1,11 @@
+# Below is a simple example, contain device groups. You can specific a group name in the Cli to represent all devices in this group.
+all:
+    android:
+        debug:
+          phone2: debug
+        demo:
+          phone3: OPPO-PBDM00
+    ios:
+        project3:
+          phone5: iphone6
+          phone6: iphone7

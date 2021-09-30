@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="monkey-monitor/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="monkey-monitor/assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Dashboard for Ape Test
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <!--
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  -->
+  <!-- CSS Files -->
+  <link href="monkey-monitor/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="monkey-monitor/assets/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="monkey-monitor/assets/demo/demo.css" rel="stylesheet" />
+    <script type="text/javascript" src="monkey-monitor/data/list.js"></script>
+    <script type="text/javascript" src="monkey-monitor/data/log.js"></script>
+    <script type="text/javascript" src="monkey-monitor/assets/js/vue.min.js"></script>
+</head>
+
+<style>
+<!--    ::-webkit-scrollbar {-->
+<!--        width: 0px;-->
+<!--        height: 1px;-->
+<!--    }-->
+    .console {
+         background-color: #000;
+         font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+         font-size: 16px;
+         color: #fff;
+         //width: 500px;
+         height: 650px;
+         padding: 5px 10px;
+         -ms-word-break: break-all;
+         word-break: keep-all;
+         overflow-x:hidden;
+         overflow-y:auto;
+    }
+    .console p {
+         white-space: pre-line;
+         margin: 0;
+    }
+    .keyin {
+     background-color: inherit;
+     border: 0;
+     color: transparent;
+     text-shadow: 0 0 0 #fff;
+     font: inherit;
+     width: 0;
+    }
+
+     .keyin:focus {
+      outline: none;
+     }
+
+    .pointer {
+     background-color: #fff;
+     -moz-animation: flash 1s infinite;
+     -o-animation: flash 1s infinite;
+     -webkit-animation: flash 1s infinite;
+     animation: flash 1s infinite;
+    }
+
+     .pointer:after {
+      content: '_';
+     }
+
+    @-moz-keyframes flash {
+     0% {
+      opacity: 0;
+     }
+
+     20% {
+      opacity: 1;
+     }
+
+     40% {
+      opacity: 1;
+     }
+
+     60% {
+      opacity: 1;
+     }
+
+     80% {
+      opacity: 0;
+     }
+
+     100% {
+      opacity: 0;
+     }
+    }
+
+    @-webkit-keyframes flash {
+     0% {
+      opacity: 0;
+     }
+
+     20% {
+      opacity: 1;
+     }
+
+     40% {
+      opacity: 1;
+     }
+
+     60% {
+      opacity: 1;
+     }
+
+     80% {
+      opacity: 0;
+     }
+
+     100% {
+      opacity: 0;
+     }
+    }
+
+    @keyframes flash {
+     0% {
+      opacity: 0;
+     }
+
+     20% {
+      opacity: 1;
+     }
+
+     40% {
+      opacity: 1;
+     }
+
+     60% {
+      opacity: 1;
+     }
+
+     80% {
+      opacity: 0;
+     }
+
+     100% {
+      opacity: 0;
+     }
+     }
+</style>
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="blue">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+          Ape Test
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="./Dashboard.html">
+              <i class="now-ui-icons design_app"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="./Report.html">
+              <i class="now-ui-icons business_chart-bar-32"></i>
+              <p>PF Charts</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="./Log.html">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Log Analysis</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Log Analysis</a>
+              <div style="font-size:35px;"><i class="now-ui-icons media-2_sound-wave"></i></div>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-nav-tabs">
+              <div class="card-header card-header-info">
+                 <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-pills" data-tabs="tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#summary" data-toggle="tab">Summary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#crash" data-toggle="tab">Crash Log</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#anr" data-toggle="tab">All Exception Log</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#exception" data-toggle="tab">GC Log</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#noresponse" data-toggle="tab">WATCHDOG Log</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="tab-content text-left" id="app">
+                    <div class="tab-pane active" id="summary">
+                        <div class="panel-header-lg chart-area">
+                        <canvas id="logChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="crash">
+                        <div class="console">
+                            <div><p>{{ crash_data ? crash_data : '暂无数据' }}</p></div>
+                            <div>
+                                <span>
+                               <input type="text" id="keyin_field1" class="keyin" onkeyup="changeWidth(this)" autofocus />
+                               <label class="pointer" for="keyin_field1"></label>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="anr">
+                        <div class="console">
+                            <div><p>{{ anr_data ? anr_data : '暂无数据' }}</p></div>
+                            <div>
+                                <span>
+                               <input type="text" id="keyin_field2" class="keyin" onkeyup="changeWidth(this)" autofocus />
+                               <label class="pointer" for="keyin_field2"></label>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="exception">
+                        <div class="console">
+                            <div><p>{{ gc_data ? gc_data : '暂无数据' }}</p></div>
+                            <div>
+                                <span>
+                               <input type="text" id="keyin_field3" class="keyin" onkeyup="changeWidth(this)" autofocus />
+                               <label class="pointer" for="keyin_field3"></label>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="noresponse">
+                        <div class="console">
+                            <div><p>{{ watchdogdata ? watchdogdata : '暂无数据' }}</p></div>
+                            <div>
+                                <span>
+                               <input type="text" id="keyin_field4" class="keyin" onkeyup="changeWidth(this)" autofocus />
+                               <label class="pointer" for="keyin_field4"></label>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="monkey-monitor/assets/js/core/jquery.min.js"></script>
+  <script src="monkey-monitor/assets/js/core/popper.min.js"></script>
+  <script src="monkey-monitor/assets/js/core/bootstrap.min.js"></script>
+  <script src="monkey-monitor/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  -->
+  <!-- Chart JS -->
+  <script src="monkey-monitor/assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="monkey-monitor/assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="monkey-monitor/assets/js/now-ui-dashboard.min.js" type="text/javascript"></script>
+  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="monkey-monitor/assets/demo/demo.js"></script>
+  <script>
+  var datajs=""
+  var Case=0
+  var monitor=0
+  $.ajaxSetup({cache: true});
+  function charts(){
+	$.getScript(datajs,function(){
+		demo.initLogPageCharts();
+	});
+  }
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      datajs="monkey-monitor/data/" + caselist[Case][0] + "_" + caselist[Case][1][monitor] + ".js"
+      charts()
+    });
+  </script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                gc_data: gcdata.join('\n'),
+                crash_data: crashdata.join('\n'),
+                anr_data: anrdata.join('\n'),
+                watchdogdata: watchdogdata.join('\n')
+            }
+        })
+    </script>
+</body>
+
+</html>

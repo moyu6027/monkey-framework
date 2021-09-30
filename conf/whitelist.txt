@@ -1,0 +1,2 @@
+com.adastragrp.hccn.capp.ui.activity.SplashActivity
+com.adastragrp.hccn.capp.ui.activity.MainActivity

@@ -1,0 +1,19 @@
+# Always use ':', not '-' in this config file. Thus these contents will always parse into python dict object.
+package: com.hcc.app
+device: 88b8218
+log_level: 3
+running-events: 1000
+running-minutes: False
+throttle: 200
+seed: False
+mix: False
+skip-err: True
+activity-whitelist: False
+activity-blacklist: False
+bugreport: False
+hprof: False
+windows: com.adastragrp.hccn.capp.ui.activity.MainActivity
+             
+
+
+

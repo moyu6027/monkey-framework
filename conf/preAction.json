@@ -1,0 +1,148 @@
+{
+  "packageName":"com.hcc.app",
+  "activity1":"com.adastragrp.hccn.capp.ui.activity.UserAuthActivity",
+  "activity2":"com.adastragrp.hccn.capp.ui.activity.MainActivity",
+  "activityCount": "2",
+  "preActivityCount": "1",
+  "pageStartMin":"4",
+  "rebootActionStartIndex":"2",
+  "rebootPageStart":"2",
+
+
+  "com.adastragrp.hccn.capp.ui.activity.UserAuthActivity":[
+    {
+      "text":  "*",
+      "action":"clickByIndex",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "*",
+      "action":"clickByIndex",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "*",
+      "action":"clickByIndex",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "1",
+      "action":"click",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "2",
+      "action":"click",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "1",
+      "action":"click",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "2",
+      "action":"click",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "1",
+      "action":"click",
+      "actiontype":"popaction"
+    },
+    {
+      "text":  "2",
+      "action":"click",
+      "actiontype":"popaction"
+    }
+  ],
+  "com.adastragrp.hccn.capp.ui.activity.MainActivity":[
+     {
+      "text":  "我的",
+      "action":"click",
+      "actiontype":"pushaction",
+      "newpage":"yes",
+      "optional": "no"
+    },
+   {
+      "text":  "立即登录",
+      "action":"click",
+      "actiontype":"pushaction",
+      "newpage":"yes",
+      "optional": "no"
+    },
+    {
+      "text": "*",
+      "action": "clickByIndex",
+      "actiontype": "popaction",
+      "newpage": "yes",
+      "optional": "no"
+    },
+    {
+      "text": "*",
+      "action": "clickByIndex",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+    },
+    {
+      "text": "1",
+      "action": "click",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+
+    },
+    {
+      "text": "2",
+      "action": "click",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+    },
+    {
+      "text": "1",
+      "action": "click",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+    },
+    {
+      "text": "2",
+      "action": "click",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+    },
+    {
+      "text": "1",
+      "action": "click",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+    },
+    {
+      "text": "2",
+      "action": "click",
+      "actiontype": "popaction",
+      "newpage": "no",
+      "optional": "no"
+    },
+   {
+      "text":  "我的",
+      "action":"click",
+      "actiontype":"pushaction",
+      "newpage":"yes",
+      "optional": "no"
+    },
+   {
+      "text":  "立即验证",
+      "action":"click",
+      "actiontype":"pushaction",
+      "newpage":"yes",
+      "optional": "no"
+    }
+   
+  ]
+
+}

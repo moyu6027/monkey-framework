@@ -1,0 +1,1 @@
+com.adastragrp.hccn.capp.ui.activity.NewRegistrationActivity
